@@ -1,0 +1,7 @@
+{{#each options}}
+  {{#if selected}}
+    <li><a class="js-select-list highlight-icon" href="#" name="{{value}}" disabled>{{value}} (current)</a></li>
+  {{else}}
+    <li><a class="js-select-list highlight-icon" href="#" name="{{value}}">{{value}}</a></li>
+  {{/if}}
+{{/each}}

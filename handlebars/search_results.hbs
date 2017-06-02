@@ -1,0 +1,26 @@
+{{#if results}}
+  <ul id="resultsList">
+    {{#each results}}
+    <li>
+    <section class="search-result-card">
+      <div class="search-result-card-container js-list-card-container">
+        <div class="list-card">
+          <div class="list-card-details">
+            <a class="list-card-title js-card-name" data-card-id="{{id}}" href="#"
+              <span class="card-short-id">{{getListName list_id}}: </span>{{title}}
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="search-result-card-details">
+        <p class="u-bottom"><a class="search-result-card-details-name" data-card-id="{{id}}" href="">{{title}}</a></p>
+        <p class="u-bottom quiet">in <strong>{{getListName list_id}}</strong></p>
+        <p>{{description}}</p>
+      </div>
+    </section>
+    </li>
+    {{/each}}
+  </ul>
+{{else}}
+  <div class="search-warning js-no-results">We couldn't find any cards or boards that matched your search.</div>
+{{/if}}

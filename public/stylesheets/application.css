@@ -1,0 +1,36 @@
+.board-canvas {
+  height: 100%;
+}
+#createList + .list-add-controls {
+  height: 0;
+  transition: height 250ms ease;
+}
+#createList:focus + .list-add-controls {
+  height: 32px;
+}
+.hide {
+  display: none;
+}
+.window-overlay.show {
+  display: block;
+}
+.window-overlay.show .window {
+  display: block;
+  position: relative;
+  left: 50%;
+  margin: 48px 0 80px -365px;
+}
+.card-container {
+  min-height: 5px;
+}
+.droppable-card:hover {
+  background-color: #edeff0;
+  border-bottom-color: #d6dadc;
+}
+.droppable-card:hover .list-card-operation {
+  visibility: visible;
+}
+.gu-mirror {
+  transform: rotate(6deg);
+  -webkit-transform: rotate(6deg);
+}

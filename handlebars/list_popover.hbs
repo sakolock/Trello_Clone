@@ -1,0 +1,64 @@
+<div class="pop-over-header js-pop-over-header">
+  <a href="#" class="pop-over-header-back-btn icon-sm icon-back" hidden></a>
+  <span class="pop-over-header-title">List Actions</span>
+  <a href="#" class="pop-over-header-close-btn icon-sm icon-close"></a>
+</div>
+<div>
+  <div class="pop-over-content js-pop-over-content u-fancy-scrollbar js-tab-parent" style="max-height: 494px;">
+    <div>
+      <ul class="pop-over-list">
+        <li><a class="js-add-card" href="#">Add Card…</a></li>
+        <li><a class="js-copy-list" href="#">Copy List…</a></li>
+        <li><a class="js-move-list" href="#">Move List…</a></li>
+        <li><a class="highlight-icon js-list-subscribe" href="#">Subscribe 
+          {{#if subscribed}}
+          <span class="icon-sm icon-check"></span>
+          {{/if}}
+        </a></li>
+      </ul>
+      <hr>
+      <ul class="pop-over-list">
+        <li><a class="js-move-cards" href="#">Move All Cards in This List…</a></li>
+        <li><a class="js-archive-cards" href="#">Archive All Cards in This List…</a></li>
+      </ul>
+      <hr>
+      <ul class="pop-over-list">
+        <li><a class="js-close-list" href="#">Archive This List</a></li>
+      </ul>
+    </div>
+    <div class="pop-over-copy-list" hidden>
+      <form>
+          <label>Name</label>
+          <textarea class="js-autofocus" name="name">{{name}}</textarea>
+          <input class="primary wide js-submit" type="submit" value="Create List">
+      </form>
+    </div>
+    <div class="pop-over-move-list" hidden>
+      <form>
+          <div class="form-grid">
+              <div class="button-link setting form-grid-child form-grid-child-full"><span class="label">Board</span><span class="value js-board-value">Welcome Board</span>
+                  <label>Board</label>
+                  <select id="listNames" class="js-select-board">
+                      <optgroup label="Boards">
+                      </optgroup>
+                  </select>
+              </div>
+          </div>
+          <div class="form-grid">
+              <div class="button-link setting form-grid-child form-grid-child-full"><span class="label">Position</span><span class="value js-pos-value">{{position}}</span>
+                  <label>Position</label>
+                  <select id="listPositions" class="js-select-list-pos"></select>
+              </div>
+          </div>
+          <input class="primary wide js-commit-position" type="submit" value="Move">
+      </form>
+    </div>
+    <div class="pop-over-move-cards" hidden>
+      <ul id="moveAllCards" class="pop-over-list"></ul>
+    </div>
+    <div class="pop-over-archive-card-warning" hidden>
+      <p>This will remove all the cards in this list from the board. To view archived cards and bring them back to the board, click “Menu” &gt; “Archived Items.”</p>
+      <input class="js-confirm full negate" type="submit" value="Archive All">
+    </div>
+  </div>
+</div>

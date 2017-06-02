@@ -1,0 +1,32 @@
+include /_mixins
+
+doctype html
+html
+  head
+    title Trello Clone Home
+    +stylesheet_link_tag('style')
+    +stylesheet_link_tag('application')
+    +stylesheet_link_tag('dragula')
+    +stylesheet_link_tag('jquery-ui.min')
+    +javascript_include_tag('vendor/all')
+    +javascript_include_tag('handlebars_templates')
+  body
+    #surface
+      #header
+      #content
+        block content
+
+    footer
+      .window-overlay
+
+    +javascript_include_tag('application')
+    +javascript_include_tag('models/board', 'models/list', 'models/card', 'models/label')
+    +javascript_include_tag('collections/lists', 'collections/cards', 'collections/labels')
+    +javascript_include_tag('views/header', 'views/board', 'views/list', 'views/card_list', 'views/list_popover', 'views/card_form', 'views/card_details', 'views/card_popover', 'views/card_quick_editor', 'views/card_move_popover', 'views/card_copy_popover', 'views/card_date_popover', 'views/search')
+    script(type='text/javascript').
+      App.lists = new ListsCollection(!{JSON.stringify(boardLists)});
+      App.cards = new CardsCollection(!{JSON.stringify(boardCards)});
+      App.labels = new LabelsCollection(!{JSON.stringify(boardLabels)});
+      App.drake;
+    +javascript_include_tag('router')
+

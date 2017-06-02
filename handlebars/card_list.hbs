@@ -1,0 +1,22 @@
+<div data-card-id={{id}} class="list-card-cover js-card-cover"></div>
+<span class="icon-sm icon-edit list-card-operation dark-hover js-open-quick-card-editor js-card-menu"></span>
+<div class="list-card-details">
+  <!-- LABELS -->
+  <div class="list-card-labels js-card-labels">
+    {{#each labels}}
+    <span class="card-label card-label-{{color}} mod-card-front" title="{{name}}">{{name}}</span>
+    {{/each}}
+  </div>
+  <a class="list-card-title js-card-name" dir="auto" href="#">
+    <span class="card-short-id hide">{{id}}</span>
+  {{title}}</a>
+  {{#if description}}
+    <div class="badges">
+      <span class="js-badges">
+        <div class="badge is-icon-only" title="This card has a description.">
+          <span class="badge-icon icon-sm icon-description"></span>
+        </div>
+      </span>
+    </div>
+  {{/if}}
+</div>

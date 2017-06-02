@@ -1,0 +1,21 @@
+<div class="board-wrapper">
+  <div class="board-main-content">
+    <div class="board-header u-clearfix js-board-header">
+    <a class="board-header-btn board-header-btn-name js-rename-board" href="#"><span class="board-header-btn-text" dir="auto">Welcome Board</span></a>
+    </div>
+    <div class="board-canvas">
+      <div id="board" class="list-container">
+        <div class="js-add-list list-wrapper mod-add is-idle">
+          <form id="createList" action="/lists" method="post">
+            <span class="placeholder js-open-add-list">Add a list…</span>
+            <input class="list-name-input" type="text" name="name" placeholder="Add a list…" autocomplete="off" dir="auto" maxlength="512">
+            <div class="list-add-controls u-clearfix">
+              <input class="primary mod-list-add-button js-save-edit" type="submit" value="Save">
+              <a class="icon-lg icon-close dark-hover js-cancel-edit" href="#"></a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

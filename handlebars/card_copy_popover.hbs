@@ -1,0 +1,25 @@
+<div class="pop-over is-shown" style="left: 675px; top: 129px;">
+  <div class="pop-over-header js-pop-over-header">
+    <a href="#" class="pop-over-header-back-btn icon-sm icon-back" hidden></a>
+    <span id="popoverTitle" class="pop-over-header-title">Copy Card</span>
+    <a href="#" class="pop-over-header-close-btn icon-sm icon-close"></a>
+  </div>
+  <div class="pop-over-content js-pop-over-content u-fancy-scrollbar js-tab-parent" style="max-height: 488px;">
+      <form>
+        <label>Title</label>
+        <textarea class="js-autofocus" name="name" style="margin-bottom: 12px;">{{title}}</textarea>
+        <label>Copy to…</label>
+        <div class="form-grid">
+            <div class="button-link setting form-grid-child form-grid-child-threequarters"><span class="label">List</span><span class="value js-list-value">{{getListName list_id}}</span>
+                <label>List</label>
+                <select id="copyListNames" class="js-select-list"></select>
+            </div>
+            <div class="button-link setting form-grid-child form-grid-child-quarter"><span class="label">Position</span><span class="value js-pos-value">{{getCardPosition id list_id}}</span>
+                <label>Position</label>
+                <select id="copyCardPositions" class="js-select-position"></select>
+            </div>
+        </div>
+        <input class="primary wide js-submit" type="submit" value="Create Card">
+      </form>
+  </div>
+</div>
