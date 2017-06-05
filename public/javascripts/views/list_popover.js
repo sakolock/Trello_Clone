@@ -25,7 +25,9 @@ var ListPopoverView = Backbone.View.extend({
   showCardTextarea: function(e) {
     e.preventDefault();
 
-    this.model.cardForm = new CardFormView(this.model);
+    this.model.cardForm = new CardFormView({
+      listId: this.model.get('id')
+    });
   },
   showBackIcon: function() {
     $('a.icon-back').show();

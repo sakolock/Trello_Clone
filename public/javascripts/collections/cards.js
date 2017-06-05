@@ -35,7 +35,7 @@ var CardsCollection = Backbone.Collection.extend({
     model = this.create(data, {
       success: function() {
         console.log(model.get('id'));
-        App.trigger('card_submitted', model);
+        App.trigger('card_submitted', [listId, model]);
       },
       error: function(err) {
         console.log(err);

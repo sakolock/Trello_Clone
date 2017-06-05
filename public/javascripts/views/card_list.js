@@ -2,22 +2,7 @@ var CardListView = Backbone.View.extend({
   className: 'list-card droppable-card',
   template: App.templates.card_list,
   events: {
-    "click .list-card-details": "showCardDetails",
     "click .js-open-quick-card-editor": "showQuickEditor"
-  },
-  showCardDetails: function(e) {
-    e.preventDefault();
-    var listName = this.list;
-    var labels = {
-      "labels": this.labels
-    };
-
-    this.model.detailsView = new CardDetailsView({
-      model: this.model,
-      listName: listName,
-      labels: labels
-    });
-    router.navigate('/lists/' + listName + '/cards/' + this.model.get('title'), {trigger: true});
   },
   showQuickEditor: function(e) {
     e.preventDefault();
@@ -51,7 +36,8 @@ var CardListView = Backbone.View.extend({
       id: id,
       title: title,
       description: description,
-      labels: this.labels
+      labels: this.labels,
+      list_id: listId
     }));
     $list.append(this.$el);
   },

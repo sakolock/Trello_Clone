@@ -36,12 +36,13 @@ var ListsCollection = Backbone.Collection.extend({
     var data = args[0];
     var list = args[1];
     var listId = list.get('id');
-    var model;
     var cards = App.cards.where({ list_id: listId });;
+    var model;
 
     model = this.create(data, {
       success: function() {
-        self.trigger('copy_cards', [cards, model]);        
+        self.trigger('new_list_created', model);
+        self.trigger('copy_cards', [cards, model]); //  need to make sure this runs after list is created
       },
       error: function(err) {
         console.log(err);

@@ -113,7 +113,11 @@ this["JST"]["card_list"] = Handlebars.template({"1":function(container,depth0,he
     + alias4(((helper = (helper = helpers.id || (depth0 != null ? depth0.id : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"id","hash":{},"data":data}) : helper)))
     + " class=\"list-card-cover js-card-cover\"></div><span class=\"icon-sm icon-edit list-card-operation dark-hover js-open-quick-card-editor js-card-menu\"></span><div class=\"list-card-details\"><!-- LABELS --><div class=\"list-card-labels js-card-labels\">"
     + ((stack1 = helpers.each.call(alias1,(depth0 != null ? depth0.labels : depth0),{"name":"each","hash":{},"fn":container.program(1, data, 0),"inverse":container.noop,"data":data})) != null ? stack1 : "")
-    + "</div><a class=\"list-card-title js-card-name\" dir=\"auto\" href=\"#\"><span class=\"card-short-id hide\">"
+    + "</div><a class=\"list-card-title js-card-name\" href=\"/lists/"
+    + alias4((helpers.getListName || (depth0 && depth0.getListName) || alias2).call(alias1,(depth0 != null ? depth0.list_id : depth0),{"name":"getListName","hash":{},"data":data}))
+    + "/cards/"
+    + alias4(((helper = (helper = helpers.id || (depth0 != null ? depth0.id : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"id","hash":{},"data":data}) : helper)))
+    + "\"><span class=\"card-short-id hide\">"
     + alias4(((helper = (helper = helpers.id || (depth0 != null ? depth0.id : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"id","hash":{},"data":data}) : helper)))
     + "</span>"
     + alias4(((helper = (helper = helpers.title || (depth0 != null ? depth0.title : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"title","hash":{},"data":data}) : helper)))
@@ -279,13 +283,21 @@ this["JST"]["search_results"] = Handlebars.template({"1":function(container,dept
 
   return "<li><section class=\"search-result-card\"><div class=\"search-result-card-container js-list-card-container\"><div class=\"list-card\"><div class=\"list-card-details\"><a class=\"list-card-title js-card-name\" data-card-id=\""
     + alias4(((helper = (helper = helpers.id || (depth0 != null ? depth0.id : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"id","hash":{},"data":data}) : helper)))
-    + "\" href=\"#\"<span class=\"card-short-id\">"
+    + "\" href=\"/lists/"
+    + alias4((helpers.getListName || (depth0 && depth0.getListName) || alias2).call(alias1,(depth0 != null ? depth0.list_id : depth0),{"name":"getListName","hash":{},"data":data}))
+    + "/cards/"
+    + alias4(((helper = (helper = helpers.id || (depth0 != null ? depth0.id : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"id","hash":{},"data":data}) : helper)))
+    + "\"><span class=\"card-short-id\">"
     + alias4((helpers.getListName || (depth0 && depth0.getListName) || alias2).call(alias1,(depth0 != null ? depth0.list_id : depth0),{"name":"getListName","hash":{},"data":data}))
     + ": </span>"
     + alias4(((helper = (helper = helpers.title || (depth0 != null ? depth0.title : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"title","hash":{},"data":data}) : helper)))
     + "</a></div></div></div><div class=\"search-result-card-details\"><p class=\"u-bottom\"><a class=\"search-result-card-details-name\" data-card-id=\""
     + alias4(((helper = (helper = helpers.id || (depth0 != null ? depth0.id : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"id","hash":{},"data":data}) : helper)))
-    + "\" href=\"\">"
+    + "\" href=\"/lists/"
+    + alias4((helpers.getListName || (depth0 && depth0.getListName) || alias2).call(alias1,(depth0 != null ? depth0.list_id : depth0),{"name":"getListName","hash":{},"data":data}))
+    + "/cards/"
+    + alias4(((helper = (helper = helpers.id || (depth0 != null ? depth0.id : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"id","hash":{},"data":data}) : helper)))
+    + "\">"
     + alias4(((helper = (helper = helpers.title || (depth0 != null ? depth0.title : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"title","hash":{},"data":data}) : helper)))
     + "</a></p><p class=\"u-bottom quiet\">in <strong>"
     + alias4((helpers.getListName || (depth0 && depth0.getListName) || alias2).call(alias1,(depth0 != null ? depth0.list_id : depth0),{"name":"getListName","hash":{},"data":data}))

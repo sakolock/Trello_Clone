@@ -6,14 +6,14 @@
       <div class="search-result-card-container js-list-card-container">
         <div class="list-card">
           <div class="list-card-details">
-            <a class="list-card-title js-card-name" data-card-id="{{id}}" href="#"
+            <a class="list-card-title js-card-name" data-card-id="{{id}}" href="/lists/{{getListName list_id}}/cards/{{id}}">
               <span class="card-short-id">{{getListName list_id}}: </span>{{title}}
             </a>
           </div>
         </div>
       </div>
       <div class="search-result-card-details">
-        <p class="u-bottom"><a class="search-result-card-details-name" data-card-id="{{id}}" href="">{{title}}</a></p>
+        <p class="u-bottom"><a class="search-result-card-details-name" data-card-id="{{id}}" href="/lists/{{getListName list_id}}/cards/{{id}}">{{title}}</a></p>
         <p class="u-bottom quiet">in <strong>{{getListName list_id}}</strong></p>
         <p>{{description}}</p>
       </div>
