@@ -39,14 +39,17 @@ var CardListView = Backbone.View.extend({
       labels: this.labels,
       list_id: listId
     }));
+
     $list.append(this.$el);
   },
   initialize: function() {
     this.render();
     this.model.view = this;
     this.getList();
-    this.on(this.model, 'destroy', this.destroy)
-    this.on(this.model, 'updated_list', this.getList.bind(this));
+    this.listenTo(this.model, 'destroy', this.destroy)
+    this.listenTo(this.model, 'updated_list', this.getList.bind(this));
+    this.listenTo(this.model, 'card_moved', this.render);
+    // this.listenTo(this.model, 'card_copied', this.render);
     // this.listenTo(this.model, 'sync', this.render);
   }
 });

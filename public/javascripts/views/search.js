@@ -15,7 +15,6 @@ var SearchView = Backbone.View.extend({
 
     App.$header.after(this.searchTemplate);
     this.renderResults(searchFilter);
-    this.showExitSearchIcon();
   },
   renderResults: function() {
     var results = App.board.getSearchResultsCards(this.searchFilter);

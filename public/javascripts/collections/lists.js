@@ -79,7 +79,7 @@ var ListsCollection = Backbone.Collection.extend({
 
     list.save({ card_ids: cards }, {
       success: function() {
-        App.trigger('update_list_from_dom', list);
+        // App.trigger('update_list_from_dom', list);
       }
     });
   },

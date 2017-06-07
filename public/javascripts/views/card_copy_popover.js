@@ -117,7 +117,8 @@ var CardCopyPopover = Backbone.View.extend({
 
     model = App.cards.create(data, {
       success: function() {
-        App.trigger('add_card_into_position', [listId, model, position]);
+        self.model.trigger('card_copied');
+        // App.trigger('add_card_into_position', [listId, model, position]);
         console.log(listId);
         console.log(model);
         console.log(position);

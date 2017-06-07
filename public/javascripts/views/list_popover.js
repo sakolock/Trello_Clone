@@ -15,7 +15,7 @@ var ListPopoverView = Backbone.View.extend({
     "click a.icon-back": "showPopOverMainList",
     "submit .pop-over-copy-list": "copyList",
     "change .js-select-list-pos": "selectNewListPosition",
-    "click .js-commit-position": "moveList", // need to fix
+    "click .js-commit-position": "moveList",
     "click .js-list-subscribe": "updateSubscriptionStatus",
     "click .js-move-cards": "showMoveAllCardsList",
     "click #moveAllCards .js-select-list": "moveAllCards", 
@@ -96,7 +96,6 @@ var ListPopoverView = Backbone.View.extend({
   },
   selectNewListPosition: function(e) {
     var selected = $(e.currentTarget).val();
-    console.log(selected);
     $('.value.js-pos-value').text(selected);
   },
   moveList: function(e) {
@@ -132,6 +131,7 @@ var ListPopoverView = Backbone.View.extend({
     var newList = App.lists.findWhere({ name: selected });
 
     App.trigger('move_all_cards', [oldList, newList]);
+    this.destroy();
   },
   hideCurrentContent: function() {
     $('.pop-over-content > div').hide();
@@ -180,26 +180,24 @@ var ListPopoverView = Backbone.View.extend({
     var positions = App.lists.pluck('position');
     var allPositions = [];
 
-    positions.forEach(function(p) {
+    positions.sort().forEach(function(p, idx) {
       var position = {
         selected: false,
-        value: p
+        value: idx
       };
 
-      if (p === modelPosition) {
+      if (idx === modelPosition) {
         position.selected = true;
       };
       allPositions.push(position);
     });
-
-    allPositions = _.sortBy(allPositions, 'value');
 
     return { options: allPositions };
   },
   render: function() {
     var targetElement = $('[data-board-list-id=' + this.model.get('id') + ']');
     var name = this.model.get('name');
-    var position = this.model.get('position');
+    var position = targetElement.closest('.droppable-list').index();
     var subscribed = this.model.get('subscribed');
     var domPositions = {
       "positions": App.board.getDomPositions()

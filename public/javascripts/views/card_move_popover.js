@@ -78,7 +78,7 @@ var CardMovePopover = Backbone.View.extend({
 
     this.model.save({ list_id: listId }, {
       success: function() {
-        App.trigger('add_card_into_position', [listId, self.model, position]);
+        self.model.trigger('card_moved');
         console.log(listId);
         console.log(self.model);
         console.log(position);

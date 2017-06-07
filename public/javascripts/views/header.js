@@ -9,10 +9,15 @@ var HeaderView = Backbone.View.extend({
     $('.js-search-icon').hide();
     $('.js-search-close').removeClass('hide');
   },
+  showStartSearchIcon: function() {
+    $('.js-search-icon').show();
+    $('.js-search-close').addClass('hide');
+  },
   destroySearchResults: function(e) {
     if (e) { e.preventDefault(); }
 
     App.board.searchView.remove();
+    this.showStartSearchIcon();
   },
   renderResults: function(e) {
     e.preventDefault();

@@ -105,5 +105,7 @@ var CardQuickEditView = Backbone.View.extend({
     this.y = options.y;
     this.render();
     this.listenTo(this.model, 'sync', this.render);
+    this.listenTo(this.model, 'card_moved', this.destroy);
+    this.listenTo(this.model, 'card_copied', this.destroy);
   }
 });
