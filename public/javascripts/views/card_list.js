@@ -25,6 +25,8 @@ var CardListView = Backbone.View.extend({
     this.remove();
   },
   render: function() {
+    console.log(this);
+    console.log(this.model);
     var listId = this.model.get('list_id');
     var $list = $('[data-board-list-id=' + listId + '] .card-container');
     var id = this.model.get('id');

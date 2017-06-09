@@ -30,8 +30,11 @@ var ListView = Backbone.View.extend({
   },
   updateAssociatedCardsFromData: function() {
     var self = this;
+    console.log(this.model.get('id'));
     var cards = App.cards.where({ list_id: this.model.get('id') });
+    console.log(cards);
     var currentCards = this.model.get('card_ids');
+    console.log(currentCards);
 
     _.each(cards, function(card, idx) {
       var cardId = card.get('id');

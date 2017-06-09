@@ -71,6 +71,7 @@ var CardMovePopover = Backbone.View.extend({
   moveCard: function(e) {
     e.preventDefault();
     var self = this;
+    var currListId = self.model.get('list_id');
     var listName = $('#moveListNames').val();
     var list = App.lists.findWhere({ name: listName });
     var listId = list.get('id');
@@ -78,10 +79,10 @@ var CardMovePopover = Backbone.View.extend({
 
     this.model.save({ list_id: listId }, {
       success: function() {
+        var cardId = self.model.get('id');
+        
         self.model.trigger('card_moved');
-        console.log(listId);
-        console.log(self.model);
-        console.log(position);
+        App.cards.trigger('remove_card_from_list', [cardId, currListId]);
         self.destroy();
       }
     });

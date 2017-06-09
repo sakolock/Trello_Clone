@@ -90,6 +90,8 @@ var ListsCollection = Backbone.Collection.extend({
     var listCardIds = containingList.get('card_ids');
     
     listCardIds = listCardIds.filter(function(card) {
+      console.log(cardId);
+      console.log(typeof cardId);
       return card.card_id !== cardId;
     });
 
